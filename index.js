@@ -1,96 +1,82 @@
-"use strict";
+'use strict';
 
-// Inside JavaScript document
-let button = document.querySelector("#butt1");
+// fetch("https://pokeapi.co/api/v2/pokemon/sneasel")
+//     .then(res => res.json()).then(json => console.log(json))
+//     .catch(err => console.error(err));
 
-function callMe() {
-    alert("Hi there Friends");
+// axios.get("https://raw.githubusercontent.com/ewomackQA/JSONDataRepo/master/example.json")
+//    .then(response => {
+//     const heroes = response.data;
+  
+//     const squadName = document.createElement("h1");
+//     squadName.innerText = heroes.squadName;
+//     output.appendChild(squadName);
+
+//     const secretBase = document.createElement("p");
+//     secretBase.innerText = "Secret base: " + heroes.secretBase;
+//     output.appendChild(secretBase);
+
+//     const homeTown = document.createElement("p");
+//     homeTown.innerText = "Hometown: " + heroes.homeTown;
+//     output.appendChild(homeTown);
+
+//     const formed = document.createElement("p");
+//     formed.innerText = "Formed: " + heroes.formed;
+//     output.appendChild(formed);
+
+
+//     for (let member of heroes.members) {
+//         console.log("MEMBER: ", member);
+//         const memberSection = document.createElement("section");
+
+//         const memberName = document.createElement("h2");
+//         memberName.innerText = member.name;
+//         memberSection.appendChild(memberName);
+
+//         // const powers = document.createElement("ul");
+    
+//         // for (let power of member.powers) {
+//         //     const p = document.createElement("li");
+//         //     p.innerText = power;
+//         //     powers.appendChild(p);
+//         // }
+
+//         // memberSection.appendChild(powers);
+
+//         output.appendChild(memberSection);
+//     }
+
+// }).catch(err => console.error(err));
+
+
+
+//     fetch("https://raw.githubusercontent.com/ewomackQA/JSONDataRepo/master/example.json")
+// .then(function (response){
+//         return response.json();
+// })
+// .then(function(data){
+//     document.getElementById("members").innerHTML +=
+//     data[i].id + "=>" + data[i].name
+
+//     .catch(err => console.error(err));
+// })
+// --------------
+
+axios.get("https://raw.githubusercontent.com/ewomackQA/JSONDataRepo/master/kings.json")
+.then (response => { console.log(response.data)
+const kings = response.data;
+
+let kingN = kings[0].nm;
+console.log(kingN);
+
+{
+    const memberSection = document.createElement("section");
+
+    const kingName = document.createElement("h2");
+    kingName.innerText = kingN;
+    kingSection.appendChild(kingName);
+
+    output.appendChild(kingSection);
+
 }
-
-function alsoCallMe() {
-    alert("How can I help?");
-}
-// SYNTAX: button.addEventListener(event-type, function-to-execute, bubbling?)
-button.addEventListener("click", callMe, false);
-button.addEventListener("click", alsoCallMe);
-
-//counter 
-
-const counter = document.getElementById("counter");
-
-const updateCounter = (event) => {
-    const updated = event.target.innerText;
-    if (updated === "R") return counter.value = "0";
-    const curr = counter.value;
-    const answer = parseInt(curr) + parseInt(updated);
-
-    counter.value = answer;
-    writeHistory(curr, updated, answer)
-}
-
-const Buttons = document.getElementById("counterButtons").childNodes;
-for (let button of Buttons) {
-    button.addEventListener("click", updateCounter);
-}
-
-const minusFive = () => {
-    counter.value = parseInt(counter.value) - 5;
-}
-// minusFive is a CALLBACK
-document.getElementById("minusFiveButton").addEventListener("click", minusFive)
-
-
-
-const minusOne = () => {
-    counter.value = parseInt(counter.value) - 1;
-}
-
-const reset = () => {
-    counter.value = "0";
-}
-
-const plusOne = () => {
-    counter.value = parseInt(counter.value) + 1;
-}
-
-const plusFive = () => {
-    counter.value = parseInt(counter.value) + 5;
-}
-
-const output = document.getElementById("output");
-
-const writeHistory = (num1, num2, answer) => {
-    const newHistory = document.createElement("p");
-    // output.innerText = num1 + " " + op + " " + num2 + " = " + answer;
-    newHistory.innerText = `${num1}${num2}=${answer}`;
-
-    const delButton = document.createElement("button");
-    delButton.innerText = "X";
-    delButton.addEventListener("click", function () {
-        const del = confirm("Are you sure you want to delete this?");
-        if (del) newHistory.remove();
-    })
-    newHistory.appendChild(delButton);
-    output.prepend(newHistory);
-
-    // if (output.childNodes.length > 5) {
-    //     output.childNodes[5].remove();
-    // }
-}
-
-const calc = document.getElementById("calc");
-
-const updateCalc = (events) => {
-    const updated = events.target.innerText;
-    if (updated === "R") return calc.value = "0";
-    const curr = calc.value;
-    const answer = parseInt(curr) + parseInt(updated);
-
-    calc.value = answer;
-    writeHistory(curr, updated, answer)
-}
-
-const Butts = document.getElementById("calcButtons").childNodes;
-for (let Button of Butts) {
-    Button.addEventListener("click", updateCalc);
-}
+}).catch(err => console.error(err));
