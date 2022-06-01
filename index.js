@@ -62,19 +62,51 @@
 // })
 // --------------
 
+// axios.get("https://raw.githubusercontent.com/ewomackQA/JSONDataRepo/master/kings.json")
+// .then (response => { console.log(response.data)
+// const kings = response.data;
+
+// let kingN = kings[0].nm;
+// console.log(kingN);
+
+// {
+//     const memberSection = document.createElement("section");
+
+//     const kingName = document.createElement("h2");
+//     kingName.innerText = kingN;
+//     kingSection.appendChild(kingName);
+
+//     output.appendChild(kingSection);
+
+// }
+// }).catch(err => console.error(err));
+
+// -----
+
+// document.getElementById(`searchInput`).addEventListener("input", function (event) { const search = event.target.value;
+//     renderKings(search);
+// });
+
+// fucntion renderKings(search){
+
 axios.get("https://raw.githubusercontent.com/ewomackQA/JSONDataRepo/master/kings.json")
 .then (response => { console.log(response.data)
 const kings = response.data;
 
-let kingN = kings[0].nm;
+let kingN = kings[0];
 console.log(kingN);
 
 {
-    const memberSection = document.createElement("section");
+    const kingSection = document.createElement("div");
 
     const kingName = document.createElement("h2");
-    kingName.innerText = kingN;
+    kingName.innerText = kings.nm;
     kingSection.appendChild(kingName);
+
+    const kingHouse= document.createElement("P");
+    kingHouse.innerHTML = "City:" + kings.hse;
+    kingSection.appendChild(kingHouse);
+
 
     output.appendChild(kingSection);
 
