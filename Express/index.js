@@ -8,7 +8,7 @@ const server = app.listen(4494,() =>
     console.log(`server started succesfully on port number ${server.address().port}`)
 });
 
-app.use(express.json());
+
 
 app.get('/hello', (req, res)=> res.send("Hello world"));
 
@@ -37,8 +37,19 @@ app.get('/delete/:id', (req, res) => {
     res.send(name.splice(req.params.id, 1));
 });
 
+app.use(express.json());
+
 app.post('/create', (req, res) => {
-    const nameAdd = req.body.nameAdd;
+    const nameAdd = req.body.name;
     names.push(nameAdd);
     res.status(201).send(`${nameAdd} added successfully`);
+});
+
+const logger = (req, res, next) => {
+    console.log(new Date());
+    next();
+}
+
+app.get('/', logger, (req, res) => {
+    res.send('Hello, world!');
 });
