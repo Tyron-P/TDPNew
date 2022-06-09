@@ -53,3 +53,14 @@ const logger = (req, res, next) => {
 app.get('/', logger, (req, res) => {
     res.send('Hello, world!');
 });
+
+//test to see if it works
+
+app.use((err, req, res, next) => {
+    res.status(err.status ? err.status : 500).send(err.message);
+  });
+  
+  const server = app.listen(4494, () => {
+    console.log('Server started on', server.address().port);
+  });
+  
