@@ -7,21 +7,23 @@ mongoose.connect('mongodb://localhost:27017/TDP-DB', { useNewUrlParser: true }, 
   return console.log('Connection successful');
 });
 
-const trainerSchema = new Schema({
+const movieSchema = new Schema ({
   name: {
-    type: String,
-    min: 2,
-    required: true,
+      type: String,
+      min: 2,
+      required: true
   },
-  age: {
-    type: Number,
-    min: 1,
-    max: 65,
-    required: true,
+  description: {
+      type: String,
+      default: "N/A"
   },
-  specialism: String,
+  minsLength: {
+      type: Number,
+      min: 2,
+      required: true
+  }
 });
 
-const Trainer = mongoose.model('trainer', trainerSchema);
+const movieMongoose = mongoose.model('movies', movieSchema);
 
-module.exports = Trainer;
+module.exports = movieMongoose;
