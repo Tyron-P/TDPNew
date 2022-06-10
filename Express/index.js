@@ -29,6 +29,7 @@ app.get('/', logger, (req, res) => {
 });
 
 
+
 app.use('*', (req, res, next) => next({ status: 404, message: 'Invalid url' })); // catches 404's
 //test to see if it works
 
