@@ -23,12 +23,15 @@ describe('testing a mutiplication fuction', function() {
 
 
 // const doggoComp = () 
-let place = (1);
+let place = (5);
 let numberPlaces = (1 <= 10);
-for (let i = 0; i <=10; i++);
-console.log(i) 
-    if (i === place)
-    return
+for (let i = 0; i <=10; i++)
+ {
+    if (i === place) {
+        continue;
+    }
+    console.log(i)
+}
 
 
 
