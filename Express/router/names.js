@@ -30,4 +30,21 @@ router.post('/create', (req, res) => {
     res.status(201).send(`${nameAdd} added successfully`);
 });
 
+router.put('/update/:id', (req, res, next) => {
+    const id = parseInt(req.params.id, 10);
+    const nameUpdate = req.query.name;
+    if (Number.isNaN(id) || id < 0 || id >= names.length) return next({ status: 400, message: 'Invalid id' });
+    const oldName = names[id];
+    names.splice(id, 1, nameUpdate);
+    return res.send(`Replaced ${oldName} with ${names[id]}`);
+  });
+
+  router.delete('/remove/:id', (req, res, next) => {
+    const id = parseInt(req.params.id, 10);
+    if (Number.isNaN(id) || id < 0 || id >= names.length) return next({ status: 400, message: 'Invalid id' });
+    names.splice(id, 1);
+    return res.status(204).send();
+  });
+  
+
 module.exports = router;
