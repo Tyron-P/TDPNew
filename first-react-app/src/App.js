@@ -3,6 +3,8 @@ import './App.css';
 import Heading from './Heading';
 import Team from './Team';
 import MilesAhead from './MilesAhead';
+import Login from './Login';
+
 
 function App() {
   // const element = <h1> this is an HTML element stored instide a cosntant </h1>
@@ -14,6 +16,8 @@ function App() {
       <Team names="Michal" age={30} background="Graduate"/>
       <br/>
       <MilesAhead/>
+      <br/>
+      <Login/>
     </div>
   );
 }
