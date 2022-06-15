@@ -12,10 +12,10 @@ const minNum = numbers.reduce ((accumulator, next) =>
 console.log (minNum);
 
 
-const filterNum = numbers.filter ((n) =>
+const filterONum = numbers.filter ((n) =>
 n % 2==1);
 console.log (filterNum)
 
-const filterNum = numbers.filter ((n) =>
+const filterENum = numbers.filter ((n) =>
 n % 2==1);
 console.log (filterNum)
