@@ -4,6 +4,7 @@ import Heading from './Heading';
 import Team from './Team';
 import MilesAhead from './MilesAhead';
 import Login from './Login';
+import Content from './Content';
 
 
 function App() {
@@ -18,7 +19,14 @@ function App() {
       <MilesAhead/>
       <br/>
       <Login/>
+      <br/>
+      <br/>
+      New section -------
+      <Content/>
+
     </div>
+
+   
   );
 }
 
