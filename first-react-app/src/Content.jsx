@@ -1,3 +1,4 @@
+import sampleData from './sampleData.json';
 const Content = () => {
 
     return(
