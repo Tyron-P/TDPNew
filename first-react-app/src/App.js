@@ -6,6 +6,7 @@ import './App.css';
 // import Login from './Login';
 // import Content from './Content';
 // import EmployeeInfo from './Employee/EmployeeInfo';
+import MoviesApp from './Movies/MoviesApp';
 
 
 function App() {
@@ -26,7 +27,7 @@ function App() {
       <Content/> */}
       {/* <EmployeeInfo/> */}
 
-
+      <MoviesApp/>
     </div>
 
    
