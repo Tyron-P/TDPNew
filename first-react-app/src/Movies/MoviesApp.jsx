@@ -49,14 +49,18 @@
 
 // export default MoviesApp;
 
+//---------------------------------------------------------------------- seperate versions
+
+
 import { useEffect, useState } from 'react';
 import axios from 'axios';
-const appkey = ('52ccc701')
+
 
 function MoviesApp() {
     const [data, setData] = useState({});
     const [filmTitle, setFilmTitle] = useState('');
     const [apiKey, setApiKey] = useState("");
+    const appkey = ('52ccc701')
 
     const updateApiKey = (e) => {
               e.preventDefault(); 
