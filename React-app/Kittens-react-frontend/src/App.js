@@ -1,6 +1,17 @@
 import logo from './logo.svg';
 import './App.css';
 
+axios.post('/user', {
+  firstName: 'Fred',
+  lastName: 'Flintstone'
+})
+.then(function (response) {
+  console.log(response);
+})
+.catch(function (error) {
+  console.log(error);
+});
+
 function App() {
   return (
     <div className="App">
