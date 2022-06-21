@@ -6,6 +6,8 @@ import About from "./routing/About";
 import Shop from "./routing/Shop";
 import NotFound from "./routing/NotFound";
 import Nav from "./routing/Nav";
+import Users from "./routing/Users";
+import Contact from "./routing/Contact";
 
  
 
@@ -15,12 +17,20 @@ function App() {
    
    <BrowserRouter>
    <Nav/>
+
    <Routes>
+     
+
+
    <Route exact path ="/" element ={<Home />} />
+   <Route  path ="/Users" element ={<Users />} />
+   <Route  path ="/Users/:id" element ={<Users />} />
+   <Route  path ="/About" element ={<About />} />
+   <Route  path ="/Shop" element ={<Shop />} />
+   <Route  path ="/Contact" element ={<Contact />} />
+   <Route  path ="*" element ={<NotFound />} />
+
    
-   <Route exact path ="/About" element ={<About />} />
-   <Route exact path ="/Shop" element ={<Shop />} />
-   <Route exact path ="*" element ={<NotFound />} />
    </Routes>
    </BrowserRouter>
 
