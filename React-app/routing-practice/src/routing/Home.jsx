@@ -1,5 +1,3 @@
-
-
 const Home = () => {
     return (
         <>
@@ -7,6 +5,6 @@ const Home = () => {
         <h3> Cakes to the left, waffles to the right</h3>
         </>
     );
-};
+}
 
 export default Home;
